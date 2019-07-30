@@ -22,12 +22,14 @@ object Utils {
         return firstName to lastName
     }
 
+    fun toinitials(firstName: String?, lastName: String?): String? {
+        TODO("not implemented")
+    }
+
     fun transliteration(payload: String,divider:String =" "): String {
         TODO("not implemented")
     }
 
-    fun toinitials(firstName: String?, lastName: String?): String? {
-        TODO("not implemented")
-    }
+
 
 }
