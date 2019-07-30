@@ -6,7 +6,7 @@ object Utils {
         var fn :String?
 
         fn = when(fullName){
-             ""," " -> "null null"
+             ""," " -> null
              else -> fullName
         }
 
@@ -22,8 +22,19 @@ object Utils {
         return firstName to lastName
     }
 
-    fun toinitials(firstName: String?, lastName: String?): String? {
-        TODO("not implemented")
+    fun toInitials(firstName: String?, lastName: String?): String? {
+        var rtn:String;
+        if (firstName.isNullOrEmpty()) rtn = ""
+            else rtn = firstName[0].toString()
+        if (lastName.isNullOrEmpty()) rtn += ""
+            else rtn += lastName[0].toString()
+        //else rtn: String? = (firstName?.firstOrNull()?.toString()+lastName?.firstOrNull()?.toString()).toString()
+        if (firstName == " ") rtn =""
+        if (lastName == " ") rtn =""
+        when (rtn) {
+            "", " " -> return null
+        }
+        return rtn
     }
 
     fun transliteration(payload: String,divider:String =" "): String {
