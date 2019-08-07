@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -44,6 +45,17 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         textTxt.text = benderObj.askQuestion()
         sendBtn.setOnClickListener(this)
+
+
+        messageEt.setOnEditorActionListener() { v, actionId, event ->
+            when(actionId){
+            EditorInfo.IME_ACTION_DONE -> { sendBtn.callOnClick(); hideKeyboard(); true }
+            else -> false
+            }
+        }
+
+
+
 
     }
 
@@ -95,6 +107,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         }
 
     }
+
 
 }
 
