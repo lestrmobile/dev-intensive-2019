@@ -42,6 +42,7 @@ class Bender(var status:Status = Status.NORMAL, var question:Question = Question
         cnt = 0
         this.status = Status.NORMAL
         this.question = Question.NAME
+
     }
 
     enum class Status(val color: Triple<Int, Int, Int>) {
