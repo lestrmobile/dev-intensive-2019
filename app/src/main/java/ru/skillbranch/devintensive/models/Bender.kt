@@ -80,7 +80,6 @@ class Bender(var status:Status = Status.NORMAL, var question:Question = Question
         IDLE("На этом все, вопросов больше нет",listOf()){
             override fun nextQuestion(): Question = IDLE
         };
-
         abstract fun nextQuestion():Question
     }
 }
