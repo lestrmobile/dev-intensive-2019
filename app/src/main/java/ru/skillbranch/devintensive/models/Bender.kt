@@ -29,7 +29,7 @@ class Bender(var status:Status = Status.NORMAL, var question:Question = Question
             cnt++
             if(cnt < 3){
             status = status.nextStatus()
-            return "Это не правильный ответ!\n${question.question}" to status.color}
+            return "Это неправильный ответ!\n${question.question}" to status.color}
             else{
                 cnt = 0
                 resetBender()
@@ -68,7 +68,7 @@ class Bender(var status:Status = Status.NORMAL, var question:Question = Question
         PROFESSION("Назови мою профессию?",listOf("сгибальщик","bender")){
             override fun nextQuestion(): Question = MATERIAL
         },
-        MATERIAL("Из чго я сделан?",listOf("металл","дерево","metall","iron","wood")){
+        MATERIAL("Из чего я сделан?",listOf("металл","дерево","metall","iron","wood")){
             override fun nextQuestion(): Question = BDAY
         },
         BDAY("Когда меня создали?",listOf("2993")){
