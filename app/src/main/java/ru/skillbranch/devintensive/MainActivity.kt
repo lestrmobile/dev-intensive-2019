@@ -1,12 +1,10 @@
 package ru.skillbranch.devintensive
 
 
-import android.app.Activity
-import ru.skillbranch.devintensive.Extensions.hideKeyboard
+import ru.skillbranch.devintensive.extensions.hideKeyboard
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
