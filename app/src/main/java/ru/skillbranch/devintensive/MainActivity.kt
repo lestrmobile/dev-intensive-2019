@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
             textTxt.text = phrase
         }
-        hideKeyboard()
+
     }
 
 }
