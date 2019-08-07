@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         sendBtn.setOnClickListener(this)
 
 
-        messageEt.setOnEditorActionListener() { v, actionId, event ->
+        messageEt.setOnEditorActionListener() { _, actionId, _ ->
             when(actionId){
             EditorInfo.IME_ACTION_DONE -> { sendBtn.callOnClick(); hideKeyboard(); true }
             else -> false
