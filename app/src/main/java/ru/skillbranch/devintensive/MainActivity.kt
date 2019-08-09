@@ -1,6 +1,7 @@
 package ru.skillbranch.devintensive
 
 
+import android.app.Activity
 import ru.skillbranch.devintensive.extensions.hideKeyboard
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -13,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.skillbranch.devintensive.extensions.isKeyboardOpen
 import ru.skillbranch.devintensive.models.Bender
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
@@ -94,6 +96,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         outState?.putString("STATUS", benderObj.status.name)
         outState?.putString("QUESTION", benderObj.question.name)
         Log.d("M_MainActivity","onSaveInstanceState ${benderObj.status.name} ${benderObj.question.name}")
+        isKeyboardOpen()
     }
 
     override fun onClick(v: View?) {
@@ -101,6 +104,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             if (!messageEt.text.isEmpty()) {
                 val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString())
                 messageEt.setText("")
+
                 val (r, g, b) = color
                 benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
                 textTxt.text = phrase
