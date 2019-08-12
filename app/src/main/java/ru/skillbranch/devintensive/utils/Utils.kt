@@ -55,7 +55,9 @@ object Utils {
             r += payload[i].toString()
             continue
         }
-        r += Trans[payload[i].toString()]
+
+        r += Trans[payload[i].toString()?:""]
+
     }
     return r
     }
