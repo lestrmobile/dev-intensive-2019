@@ -9,6 +9,5 @@ fun String.truncate(len:Int = 16):String{
     r += this[i].toString()
   }
   r += "..."
-
   return r
 }
