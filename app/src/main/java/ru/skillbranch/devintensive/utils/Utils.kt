@@ -45,6 +45,7 @@ object Utils {
     for(i in payload.indices){
         if (payload[i].toString() == divider) {
             r += divider
+
             continue
         }
         if (payload[i].toString() in "a".."z"){
