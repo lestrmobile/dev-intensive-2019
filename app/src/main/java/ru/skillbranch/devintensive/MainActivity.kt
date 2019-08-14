@@ -20,7 +20,7 @@ import ru.skillbranch.devintensive.models.Bender
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     lateinit var benderImage: ImageView
-    lateinit var textTxt: TextView
+    lateinit var textTxt:  TextView
     lateinit var messageEt: EditText
     lateinit var sendBtn : ImageView
 
