@@ -1,5 +1,6 @@
 package ru.skillbranch.devintensive.extensions
 
+import java.lang.Math.abs
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -67,8 +68,29 @@ fun Date.humanizeDiff(date : Date = Date()): String {
 
 
 enum class TimeUnits{
-    SECOND,
-    MINUTE,
-    HOUR,
-    DAY
+    SECOND {
+        override fun plural(value:Int) = plural_common(value, "секунд", "секунду", "секунды")
+    },
+    MINUTE {
+        override fun plural(value:Int) = plural_common(value, "минут", "минуту", "минуты")
+    },
+    HOUR {
+        override fun plural(value:Int) = plural_common(value, "часов", "час", "часа")
+    },
+    DAY {
+        override fun plural(value:Int) = plural_common(value, "дней", "день", "дня")//"${abs(value)} ${if (abs(value) == 1) "день" else if (abs(value) % 10 <= 4 ) "дня" else "дней"}"
+    };
+
+    abstract fun plural(value:Int): String
+    protected fun plural_common(value:Int, strDef : String, str1 : String, str2_4 : String) : String  {
+        val a = abs(value)
+        val m = a % 100
+        if (m in 11..20)
+            return "$a $strDef"
+        else if (a % 10 == 1)
+            return "$a $str1"
+        else if (a % 10 <= 4 && a % 10 != 0)
+            return "$a $str2_4"
+        return "$a $strDef"
+    }
 }
