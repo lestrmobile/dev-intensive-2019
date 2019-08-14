@@ -39,3 +39,9 @@ enum class TimeUnits{
     HOUR,
     DAY
 }
+
+
+fun TimeUnits.plural(q:Int):String{
+
+    return this.toString()
+}
